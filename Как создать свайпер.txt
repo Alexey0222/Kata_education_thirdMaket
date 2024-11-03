@@ -1,0 +1,58 @@
+Шаг 1: Подключение файлов Swiper
+Сначала загрузите CSS и JavaScript файлы Swiper. Их можно подключить через CDN, вставив ссылки прямо в ваш HTML-код:
+
+html
+Копировать код
+<!-- Подключаем CSS Swiper -->
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper/swiper-bundle.min.css"
+/>
+
+<!-- Подключаем JS Swiper -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+Примечание: Эти теги <link> и <script> должны быть добавлены в <head> вашего HTML-документа, либо перед закрывающим тегом </body> для <script>, если вы хотите загружать JavaScript в конце.
+
+Шаг 2: Разметка HTML для Swiper
+Добавьте разметку для слайдера. Убедитесь, что структура HTML соответствует требованиям Swiper:
+
+html
+Копировать код
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <!-- Слайд 1 -->
+        <div class="swiper-slide">Слайд 1</div>
+        <!-- Слайд 2 -->
+        <div class="swiper-slide">Слайд 2</div>
+        <!-- Слайд 3 -->
+        <div class="swiper-slide">Слайд 3</div>
+        <!-- Добавьте столько слайдов, сколько нужно -->
+    </div>
+    <!-- Кнопки навигации -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <!-- Пагинация -->
+    <div class="swiper-pagination"></div>
+</div>
+Вы можете изменить содержимое слайдов или добавить изображения, но структура должна оставаться той же.
+
+Шаг 3: Инициализация Swiper на JavaScript
+Теперь нужно инициализировать Swiper на странице. Добавьте этот код в файл JavaScript или в HTML, после того как все элементы загрузятся:
+
+javascript
+Копировать код
+document.addEventListener("DOMContentLoaded", function () {
+    const swiper = new Swiper(".swiper-container", {
+        loop: true, // Бесконечный цикл
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        // Вы можете добавить другие параметры по своему усмотрению
+    });
+});
+Этот код создает экземпляр Swiper, который включает пагинацию и кнопки навигации.
